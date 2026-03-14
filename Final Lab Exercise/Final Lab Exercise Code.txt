@@ -1,0 +1,104 @@
+#include <iostream>
+using namespace std;
+
+class Person{
+public:
+    string name;
+protected:
+    int age;
+private:
+    int secretID;
+
+public:
+    Person(){
+        age=0;
+        secretID=111;
+    }
+
+    void setPerson(string n,int a){
+        name=n;
+        age=a;
+    }
+
+    void showPerson(){
+        cout<<"Name: "<<name<<endl;
+        cout<<"Age: "<<age<<endl;
+    }
+};
+
+class Student : virtual public Person{
+public:
+    int roll;
+
+    void setStudent(int r){
+        roll=r;
+    }
+
+    void showStudent(){
+        cout<<"Roll Number: "<<roll<<endl;
+    }
+};
+
+class Teacher : virtual public Person{
+public:
+    string subject;
+
+    void setTeacher(string s){
+        subject=s;
+    }
+
+    void showTeacher(){
+        cout<<"Subject: "<<subject<<endl;
+    }
+};
+
+class ResearchAssistant : public Student, public Teacher{
+public:
+    string project;
+
+    void setRA(string p){
+        project=p;
+    }
+
+    void showRA(){
+        cout<<"Research Project: "<<project<<endl;
+    }
+};
+
+class Department{
+public:
+    string deptName;
+
+    void setDepartment(string d){
+        deptName=d;
+    }
+
+    void showDepartment(){
+        cout<<"Department: "<<deptName<<endl;
+    }
+};
+
+class HeadOfDepartment : public ResearchAssistant, public Department{
+public:
+    void display(){
+        showPerson();
+        showStudent();
+        showTeacher();
+        showRA();
+        showDepartment();
+    }
+};
+
+int main(){
+
+    HeadOfDepartment h;
+
+    h.setPerson("Ali",40);
+    h.setStudent(101);
+    h.setTeacher("Computer Science");
+    h.setRA("Artificial Intelligence");
+    h.setDepartment("Software Engineering");
+
+    h.display();
+
+}
