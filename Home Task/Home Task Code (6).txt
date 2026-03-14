@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+class Device{
+public:
+    void deviceInfo(){
+        cout<<"Device system"<<endl;
+    }
+};
+
+class Computer : public Device{
+public:
+    void compute(){
+        cout<<"Computer processing"<<endl;
+    }
+};
+
+class Network{
+public:
+    void connect(){
+        cout<<"Network connected"<<endl;
+    }
+};
+
+class Server : public Computer, public Network{
+public:
+    void serverInfo(){
+        cout<<"Server running"<<endl;
+    }
+};
+
+int main(){
+    Server s;
+
+    s.deviceInfo();
+    s.compute();
+    s.connect();
+    s.serverInfo();
+}

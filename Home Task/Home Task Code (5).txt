@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+
+class Media{
+public:
+    void play(){
+        cout<<"Playing media"<<endl;
+    }
+};
+
+class Book : public Media{
+public:
+    void read(){
+        cout<<"Reading book"<<endl;
+    }
+};
+
+class Video : public Media{
+public:
+    void watch(){
+        cout<<"Watching video"<<endl;
+    }
+};
+
+class Audio : public Media{
+public:
+    void listen(){
+        cout<<"Listening audio"<<endl;
+    }
+};
+
+int main(){
+    Book b;
+    Video v;
+    Audio a;
+
+    b.play();
+    b.read();
+
+    v.play();
+    v.watch();
+
+    a.play();
+    a.listen();
+}

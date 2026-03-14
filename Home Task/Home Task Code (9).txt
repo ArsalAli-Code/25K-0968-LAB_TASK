@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+class Device{
+public:
+    void show(){
+        cout<<"Device"<<endl;
+    }
+};
+
+class Camera : virtual public Device{
+};
+
+class Phone : virtual public Device{
+};
+
+class SmartPhone : public Camera, public Phone{
+};
+
+int main(){
+    SmartPhone s;
+
+    s.show();
+}

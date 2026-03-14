@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+class Appliance{
+public:
+    void power(){
+        cout<<"Appliance powered"<<endl;
+    }
+};
+
+class WashingMachine : public Appliance{
+public:
+    void wash(){
+        cout<<"Washing clothes"<<endl;
+    }
+};
+
+class SmartWashingMachine : public WashingMachine{
+public:
+    void smartControl(){
+        cout<<"Smart control activated"<<endl;
+    }
+};
+
+int main(){
+    SmartWashingMachine s;
+
+    s.power();
+    s.wash();
+    s.smartControl();
+}
