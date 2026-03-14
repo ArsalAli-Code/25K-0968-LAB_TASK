@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+class University{
+public:
+    void showUniversity(){
+        cout<<"University Information"<<endl;
+    }
+};
+
+class Faculty : public University{
+public:
+    void showFaculty(){
+        cout<<"Faculty Member"<<endl;
+    }
+};
+
+class Administration{
+public:
+    void showAdministration(){
+        cout<<"Administration Department"<<endl;
+    }
+};
+
+class HOD : public Faculty, public Administration{
+public:
+    void showHOD(){
+        cout<<"Head of Department"<<endl;
+    }
+};
+
+int main(){
+    HOD h;
+
+    h.showUniversity();
+    h.showFaculty();
+    h.showAdministration();
+    h.showHOD();
+}

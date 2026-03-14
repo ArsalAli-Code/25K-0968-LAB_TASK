@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+class Write{
+public:
+    void write(){
+        cout<<"Author can write"<<endl;
+    }
+};
+
+class Speaker{
+public:
+    void speak(){
+        cout<<"Author can speak"<<endl;
+    }
+};
+
+class Author : public Write, public Speaker{
+};
+
+int main(){
+    Author a;
+
+    a.write();
+    a.speak();
+}

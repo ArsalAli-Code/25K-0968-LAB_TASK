@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+
+class Account{
+public:
+    int accountNumber;
+
+    void showAccount(){
+        cout<<"Account Number: "<<accountNumber<<endl;
+    }
+};
+
+class SavingsAccount : public Account{
+public:
+    double interest;
+
+    void calculateInterest(){
+        cout<<"Interest: "<<interest<<endl;
+    }
+};
+
+class CurrentAccount : public Account{
+public:
+    double overdraft;
+
+    void calculateOverdraft(){
+        cout<<"Overdraft Limit: "<<overdraft<<endl;
+    }
+};
+
+int main(){
+    SavingsAccount s;
+    CurrentAccount c;
+
+    s.accountNumber=111;
+    s.interest=5.5;
+
+    c.accountNumber=222;
+    c.overdraft=10000;
+
+    s.showAccount();
+    s.calculateInterest();
+
+    c.showAccount();
+    c.calculateOverdraft();
+}

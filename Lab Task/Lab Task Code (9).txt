@@ -1,0 +1,30 @@
+#include <iostream>
+using namespace std;
+
+class Person{
+public:
+    void show(){
+        cout<<"Person"<<endl;
+    }
+};
+
+class Student : virtual public Person{
+};
+
+class Employee : virtual public Person{
+};
+
+class TeachingAssistant : public Student, public Employee{
+};
+
+int main(){
+    TeachingAssistant obj;
+
+    obj.show();
+
+    Person *p1=(Student*)&obj;
+    Person *p2=(Employee*)&obj;
+
+    cout<<p1<<endl;
+    cout<<p2<<endl;
+}

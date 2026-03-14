@@ -1,0 +1,47 @@
+#include <iostream>
+using namespace std;
+
+class Base{
+public:
+    int publicVar=10;
+protected:
+    int protectedVar=20;
+private:
+    int privateVar=30;
+};
+
+class PublicDerived : public Base{
+public:
+    void show(){
+        cout<<publicVar<<endl;
+        cout<<protectedVar<<endl;
+    }
+};
+
+class ProtectedDerived : protected Base{
+public:
+    void show(){
+        cout<<publicVar<<endl;
+        cout<<protectedVar<<endl;
+    }
+};
+
+class PrivateDerived : private Base{
+public:
+    void show(){
+        cout<<publicVar<<endl;
+        cout<<protectedVar<<endl;
+    }
+};
+
+int main(){
+    PublicDerived p;
+    p.show();
+    cout<<p.publicVar<<endl;
+
+    ProtectedDerived pr;
+    pr.show();
+
+    PrivateDerived pv;
+    pv.show();
+}

@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+class Person{
+public:
+    string name;
+};
+
+class Employee : public Person{
+public:
+    double salary;
+};
+
+class Developer : public Employee{
+public:
+    string language;
+
+    void display(){
+        cout<<"Name: "<<name<<endl;
+        cout<<"Salary: "<<salary<<endl;
+        cout<<"Programming Language: "<<language<<endl;
+    }
+};
+
+int main(){
+    Developer d;
+
+    d.name="Ahmed";
+    d.salary=80000;
+    d.language="C++";
+
+    d.display();
+}
